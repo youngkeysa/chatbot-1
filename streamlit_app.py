@@ -42,12 +42,11 @@ if user_input := st.chat_input("마음 속 이야기를 나눠보세요..."):
     st.session_state.messages.append({"role": "user", "content": user_input})
     with st.chat_message("user"):
         st.markdown(user_input)
-        
 
     # GPT 응답 생성
     with st.chat_message("assistant"):
         stream = client.chat.completions.create(
-            model="gpt-o3-mini",
+            model="gpt-3.5-turbo",
             messages=[
                 {"role": m["role"], "content": m["content"]}
                 for m in st.session_state.messages
@@ -58,4 +57,3 @@ if user_input := st.chat_input("마음 속 이야기를 나눠보세요..."):
 
     # 응답 저장
     st.session_state.messages.append({"role": "assistant", "content": response})
-
