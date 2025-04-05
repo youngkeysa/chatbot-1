@@ -47,7 +47,7 @@ if user_input := st.chat_input("마음 속 이야기를 나눠보세요..."):
     # GPT 응답 생성
     with st.chat_message("assistant"):
         stream = client.chat.completions.create(
-            model="gpt-3.5-turbo",
+            model="gpt-o3-mini",
             messages=[
                 {"role": m["role"], "content": m["content"]}
                 for m in st.session_state.messages
