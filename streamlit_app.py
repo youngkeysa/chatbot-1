@@ -42,6 +42,7 @@ if user_input := st.chat_input("마음 속 이야기를 나눠보세요..."):
     st.session_state.messages.append({"role": "user", "content": user_input})
     with st.chat_message("user"):
         st.markdown(user_input)
+        
 
     # GPT 응답 생성
     with st.chat_message("assistant"):
